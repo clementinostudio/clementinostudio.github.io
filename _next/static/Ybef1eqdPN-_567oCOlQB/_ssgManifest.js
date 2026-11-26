@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fbones-para\u002F[slug]","\u002Fbones\u002F[slug]","\u002Fguias\u002F[slug]","\u002Fpersonalizacao\u002F[slug]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

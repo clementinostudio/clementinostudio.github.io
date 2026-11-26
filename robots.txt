@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /acompanhar/
+Disallow: /cotacao/
+Disallow: /fornecedor/
+
+Sitemap: https://capstudio.com.br/sitemap.xml
