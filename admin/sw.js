@@ -2,7 +2,7 @@
 // e guarda a casca do painel para abrir sem internet (os pedidos em si vêm sempre do banco, nunca ficam guardados aqui).
 // Vale só para o painel: /admin/ no site ou a raiz de painel.capstudio.com.br (o site dos clientes não é afetado).
 const PAGINA = 'painel-pagina-v1';   // a página do painel (a última que abriu com internet)
-const ARQUIVOS = 'painel-arquivos-v1'; // scripts, estilos, fontes e ícones do painel (nomes com código: nunca mudam)
+const ARQUIVOS = 'painel-arquivos-v2'; // scripts, estilos, fontes e ícones do painel (nomes com código: nunca mudam)
 const MAX_ARQUIVOS = 160;
 // next dev (registrado com ?dev=1): os arquivos não têm código no nome, então nada é guardado
 const DEV = new URL(self.location.href).searchParams.has('dev');
@@ -18,7 +18,7 @@ self.addEventListener('activate', (e) => e.waitUntil((async () => {
   await self.clients.claim();
 })()));
 
-const ehArquivo = (u) => u.pathname.startsWith('/_next/static/') || /^\/(icon\.png|apple-icon\.png|favicon\.ico)$/.test(u.pathname) || /^\/(admin\/)?(icon-|badge|atalhos\/)/.test(u.pathname);
+const ehArquivo = (u) => u.pathname.startsWith('/_next/static/') || /^\/(icon\.png|icon\.svg|logo\.svg|apple-icon\.png|favicon\.ico)$/.test(u.pathname) || /^\/(admin\/)?(icon-|badge|atalhos\/)/.test(u.pathname);
 
 self.addEventListener('fetch', (e) => {
   const req = e.request;
